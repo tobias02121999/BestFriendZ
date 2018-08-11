@@ -13,6 +13,7 @@ public class scr_playerMain : MonoBehaviour {
     public GameObject playerHumanModel;
     public GameObject playerZombieModel;
     public Light playerLight;
+    public AudioSource audioSource;
 
     // Initialize the private variables
     private float movementAxisX;
@@ -48,6 +49,21 @@ public class scr_playerMain : MonoBehaviour {
                         movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
                         movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
                         break;
+
+                    case 3:
+                        movementAxisX = Input.GetAxis("Gamepad 1 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 1 Vertical");
+                        break;
+
+                    case 4:
+                        movementAxisX = Input.GetAxis("Gamepad 2 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 2 Vertical");
+                        break;
+
+                    case 5:
+                        movementAxisX = Input.GetAxis("Gamepad 3 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 3 Vertical");
+                        break;
                 }
 
                 playerLight.color = Color.blue;
@@ -69,6 +85,21 @@ public class scr_playerMain : MonoBehaviour {
                     case 2:
                         movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
                         movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
+                        break;
+
+                    case 3:
+                        movementAxisX = Input.GetAxis("Gamepad 1 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 1 Vertical");
+                        break;
+
+                    case 4:
+                        movementAxisX = Input.GetAxis("Gamepad 2 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 2 Vertical");
+                        break;
+
+                    case 5:
+                        movementAxisX = Input.GetAxis("Gamepad 3 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 3 Vertical");
                         break;
                 }
 
@@ -92,6 +123,21 @@ public class scr_playerMain : MonoBehaviour {
                         movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
                         movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
                         break;
+
+                    case 3:
+                        movementAxisX = Input.GetAxis("Gamepad 1 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 1 Vertical");
+                        break;
+
+                    case 4:
+                        movementAxisX = Input.GetAxis("Gamepad 2 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 2 Vertical");
+                        break;
+
+                    case 5:
+                        movementAxisX = Input.GetAxis("Gamepad 3 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 3 Vertical");
+                        break;
                 }
 
                 playerLight.color = Color.green;
@@ -106,13 +152,28 @@ public class scr_playerMain : MonoBehaviour {
                         break;
 
                     case 1:
-                        movementAxisX = Input.GetAxis("Arrow Keys Horizontal");
-                        movementAxisY = Input.GetAxis("Arrow Keys Vertical");
+                        movementAxisX = Input.GetAxis("WASD Horizontal");
+                        movementAxisY = Input.GetAxis("WASD Keys Vertical");
                         break;
 
                     case 2:
                         movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
                         movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
+                        break;
+
+                    case 3:
+                        movementAxisX = Input.GetAxis("Gamepad 1 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 1 Vertical");
+                        break;
+
+                    case 4:
+                        movementAxisX = Input.GetAxis("Gamepad 2 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 2 Vertical");
+                        break;
+
+                    case 5:
+                        movementAxisX = Input.GetAxis("Gamepad 3 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 3 Vertical");
                         break;
                 }
 
@@ -146,6 +207,9 @@ public class scr_playerMain : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if (isZombie && !collision.gameObject.GetComponent<scr_playerMain>().isZombie)
+        {
+            audioSource.Play();
             collision.gameObject.GetComponent<scr_playerMain>().isZombie = true;
+        }
     }
 }
