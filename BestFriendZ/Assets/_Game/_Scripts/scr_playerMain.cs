@@ -32,26 +32,90 @@ public class scr_playerMain : MonoBehaviour {
         switch (playerID)
         {
             case 0:
-                movementAxisX = Input.GetAxis("P0 Horizontal");
-                movementAxisY = Input.GetAxis("P0 Vertical");
+                switch (scr_menuController.player0InputType)
+                {
+                    case 0:
+                        movementAxisX = Input.GetAxis("Arrow Keys Horizontal");
+                        movementAxisY = Input.GetAxis("Arrow Keys Vertical");
+                        break;
+
+                    case 1:
+                        movementAxisX = Input.GetAxis("WASD Horizontal");
+                        movementAxisY = Input.GetAxis("WASD Vertical");
+                        break;
+
+                    case 2:
+                        movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
+                        break;
+                }
+
                 playerLight.color = Color.blue;
                 break;
 
             case 1:
-                movementAxisX = Input.GetAxis("P1 Horizontal");
-                movementAxisY = Input.GetAxis("P1 Vertical");
+                switch (scr_menuController.player1InputType)
+                {
+                    case 0:
+                        movementAxisX = Input.GetAxis("Arrow Keys Horizontal");
+                        movementAxisY = Input.GetAxis("Arrow Keys Vertical");
+                        break;
+
+                    case 1:
+                        movementAxisX = Input.GetAxis("WASD Horizontal");
+                        movementAxisY = Input.GetAxis("WASD Vertical");
+                        break;
+
+                    case 2:
+                        movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
+                        break;
+                }
+
                 playerLight.color = Color.red;
                 break;
 
             case 2:
-                movementAxisX = Input.GetAxis("P2 Horizontal");
-                movementAxisY = Input.GetAxis("P2 Vertical");
+                switch (scr_menuController.player2InputType)
+                {
+                    case 0:
+                        movementAxisX = Input.GetAxis("Arrow Keys Horizontal");
+                        movementAxisY = Input.GetAxis("Arrow Keys Vertical");
+                        break;
+
+                    case 1:
+                        movementAxisX = Input.GetAxis("WASD Horizontal");
+                        movementAxisY = Input.GetAxis("WASD Vertical");
+                        break;
+
+                    case 2:
+                        movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
+                        break;
+                }
+
                 playerLight.color = Color.green;
                 break;
 
             case 3:
-                movementAxisX = Input.GetAxis("P3 Horizontal");
-                movementAxisY = Input.GetAxis("P3 Vertical");
+                switch (scr_menuController.player3InputType)
+                {
+                    case 0:
+                        movementAxisX = Input.GetAxis("Arrow Keys Horizontal");
+                        movementAxisY = Input.GetAxis("Arrow Keys Vertical");
+                        break;
+
+                    case 1:
+                        movementAxisX = Input.GetAxis("Arrow Keys Horizontal");
+                        movementAxisY = Input.GetAxis("Arrow Keys Vertical");
+                        break;
+
+                    case 2:
+                        movementAxisX = Input.GetAxis("Gamepad 0 Horizontal");
+                        movementAxisY = Input.GetAxis("Gamepad 0 Vertical");
+                        break;
+                }
+
                 playerLight.color = Color.yellow;
                 break;
         }
