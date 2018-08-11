@@ -10,6 +10,7 @@ public class scr_gameControllerZombifier : MonoBehaviour {
     public Text timerText;
     public Text gameOverText;
     public float timerDuration;
+    public float rotateDegrees;
     public Transform pointLightPivotTransform;
 
     // Initialize the private variables
@@ -64,9 +65,9 @@ public class scr_gameControllerZombifier : MonoBehaviour {
                 gameOverText.text = "zombies win!";
                 gameOver = true;
             }
-        }
 
-        float value = 270 / (timerDuration / Time.deltaTime);
-        pointLightPivotTransform.Rotate(value, 0f, 0f);
+            // Cycle through night and day, rotate the sun and moon the given amount of degrees
+            pointLightPivotTransform.Rotate(rotateDegrees / (timerDuration / Time.deltaTime), 0f, 0f);
+        }
 	}
 }

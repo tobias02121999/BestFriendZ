@@ -12,6 +12,7 @@ public class scr_playerMain : MonoBehaviour {
     public Transform cameraTransform;
     public GameObject playerHumanModel;
     public GameObject playerZombieModel;
+    public Light playerLight;
 
     // Initialize the private variables
     private float movementAxisX;
@@ -33,21 +34,25 @@ public class scr_playerMain : MonoBehaviour {
             case 0:
                 movementAxisX = Input.GetAxis("P0 Horizontal");
                 movementAxisY = Input.GetAxis("P0 Vertical");
+                playerLight.color = Color.blue;
                 break;
 
             case 1:
                 movementAxisX = Input.GetAxis("P1 Horizontal");
                 movementAxisY = Input.GetAxis("P1 Vertical");
+                playerLight.color = Color.red;
                 break;
 
             case 2:
                 movementAxisX = Input.GetAxis("P2 Horizontal");
                 movementAxisY = Input.GetAxis("P2 Vertical");
+                playerLight.color = Color.green;
                 break;
 
             case 3:
                 movementAxisX = Input.GetAxis("P3 Horizontal");
                 movementAxisY = Input.GetAxis("P3 Vertical");
+                playerLight.color = Color.yellow;
                 break;
         }
 
